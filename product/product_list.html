@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class = "row mt-5">
+    <div class = "col-12">
+        <table class = "table table-dark">
+            <thead class = "thead thead-dark">
+                <td scope = "col">No.</td>
+                <td scope = "col">Name</td>
+                <td scope = "col">Price</td>
+                <td scope = "col">Uploaded at</td>
+                <td scope = "col">owner</td>
+            </thead>
+            <tbody class = "text-light">
+                {% for product in object_list %}
+                <tr>
+                    <td scope = "col">{{product.id}}</td>
+                    <td>{{ product.name }}</td>
+                    <td>${{ product.price }}</td>
+                    <td>{{ product.created_at}}</td>
+                    <td>{{ product.owner.name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

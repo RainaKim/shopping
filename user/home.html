@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h1>Welcome to flea market, {{user}}</h1>
+{% block navigation %}
+
+             <ul id="top">
+                <li><a class="{% block home %}{% endblock %}" href="/">Home</a></li>
+                <li><a class="{% block signin %}{% endblock %}" href="/user/register">Sign up</a></li>
+                <li><a class="{% block login %}{% endblock %}" href="/user/login">Login</a></li>
+                <li><a class="{% block logout %}{% endblock %}" href="/user/logout">Logout</a></li>
+                <li><a class="{% block register %}{% endblock %}" href="/product/register">Register my Product!</a></li>
+             </ul>
+             
+             <div class="content-right">
+                {% include 'product_list.html' %}
+             </div>
+             
+         {% endblock %}
+
+{% endblock %}
